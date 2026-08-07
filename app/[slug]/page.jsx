@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { getPage, getPageSlugs, site } from "../../lib/site-data";
 
 export function generateStaticParams() {
@@ -18,14 +19,14 @@ export async function generateMetadata({ params }) {
     description: page.intro,
     alternates: { canonical: `/${slug}` },
     openGraph: {
-      title: `${page.metaTitle || page.title} | Patriot Realty FL`,
+      title: `${page.metaTitle || page.title} | Approved Patriot Realty`,
       description: page.intro,
       url: `/${slug}`,
       images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: page.title }]
     },
     twitter: {
       card: "summary_large_image",
-      title: `${page.metaTitle || page.title} | Patriot Realty FL`,
+      title: `${page.metaTitle || page.title} | Approved Patriot Realty`,
       description: page.intro,
       images: ["/opengraph-image"]
     }
@@ -100,14 +101,14 @@ export default async function DynamicPage({ params }) {
               {section.links?.length ? (
                 <div className="text-links">
                   {section.links.map((link) => (
-                    <a
+                    <Link
                       key={link.href}
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
                     >
                       {link.label} →
-                    </a>
+                    </Link>
                   ))}
                 </div>
               ) : null}
@@ -123,7 +124,7 @@ export default async function DynamicPage({ params }) {
           <h2>Make your next step clearer.</h2>
         </div>
         <a className="button primary" href={`mailto:${site.email}`}>
-          Contact Patriot Realty FL
+          Contact Approved Patriot Realty
         </a>
       </section>
     </main>

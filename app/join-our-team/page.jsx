@@ -1,16 +1,16 @@
 import { site } from "../../lib/site-data";
 
-const recruitingSubject = "I am interested in joining Patriot Realty FL";
+const recruitingSubject = "I am interested in joining Approved Patriot Realty";
 
 export const metadata = {
   title: "100% Commission Real Estate Careers",
   description: "Experienced Florida real estate agents: keep 100% of your commission with a $500 flat broker fee, no floor time, and no company-provided leads.",
   alternates: { canonical: "/join-our-team" },
   openGraph: {
-    title: "We Are Hiring Experienced Florida Realtors | Patriot Realty FL",
+    title: "We Are Hiring Experienced Florida Realtors | Approved Patriot Realty",
     description: "Keep 100% of your commission. Pay a $500 flat broker fee. No floor time and no company-provided leads.",
     url: "/join-our-team",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Join Patriot Realty FL" }]
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Join Approved Patriot Realty" }]
   }
 };
 
@@ -24,7 +24,7 @@ export default function JoinOurTeamPage() {
           <p className="eyebrow">We are hiring</p>
           <h1>Keep the commission you earn.</h1>
           <p>
-            Patriot Realty FL is looking for experienced Florida real estate
+            Approved Patriot Realty is looking for experienced Florida real estate
             professionals who know how to build relationships, generate
             business, and serve clients independently.
           </p>

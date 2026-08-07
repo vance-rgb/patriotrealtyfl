@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Patriot Realty FL — Florida real estate guidance";
+export const alt = "Approved Patriot Realty — Florida real estate guidance";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -22,7 +22,7 @@ export default function OpenGraphImage() {
       >
         <div style={{ display: "flex", alignItems: "center", gap: "22px" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "92px", height: "92px", borderRadius: "14px", background: "#b73535", fontSize: "42px", fontWeight: 800 }}>PR</div>
-          <div style={{ fontSize: "36px", fontWeight: 700 }}>Patriot Realty FL</div>
+        <div style={{ fontSize: "36px", fontWeight: 700 }}>Approved Patriot Realty</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
           <div style={{ maxWidth: "980px", fontSize: "68px", lineHeight: 1.05, fontWeight: 800 }}>Florida real estate with local clarity.</div>

@@ -6,7 +6,7 @@ export const metadata = {
   description: "Watch practical VA home-loan education about payments, appraisals, entitlement, mortgage documents, and preparing for homeownership.",
   alternates: { canonical: "/va-home-loan-authority-youtube" },
   openGraph: {
-    title: "VA Home Loan Authority on YouTube | Patriot Realty FL",
+    title: "VA Home Loan Authority on YouTube | Approved Patriot Realty",
     description: "Practical VA mortgage education for Veterans and military families.",
     url: "/va-home-loan-authority-youtube",
     images: [{ url: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`, width: 1280, height: 720, alt: "VA Home Loan Authority video" }]
@@ -23,7 +23,7 @@ export default function VaHomeLoanAuthorityYoutubePage() {
           <p>Watch practical videos about VA loans, mortgage documents, appraisals, entitlement, monthly payments, and preparing for homeownership.</p>
           <div className="hero-actions">
             <a className="button primary" href={channelUrl} target="_blank" rel="noopener noreferrer">Visit the YouTube channel</a>
-            <a className="button secondary" href="/va-home-loan-authority">Read The Patriot Advantage guide</a>
+            <Link className="button secondary" href="/va-home-loan-authority">Read The Patriot Advantage guide</Link>
           </div>
         </div>
         <div className="authority-video">
@@ -41,8 +41,9 @@ export default function VaHomeLoanAuthorityYoutubePage() {
       </section>
       <section className="cta-strip">
         <div><p className="eyebrow">Put the education to work</p><h2>Explore a property payment or begin your application.</h2></div>
-        <div className="hero-actions"><a className="button secondary" href="/mortgage-calculator">Mortgage calculator</a><a className="button primary" href="https://startloanapp.com/" target="_blank" rel="noopener noreferrer">Start a loan application</a></div>
+        <div className="hero-actions"><Link className="button secondary" href="/mortgage-calculator">Mortgage calculator</Link><a className="button primary" href="https://startloanapp.com/" target="_blank" rel="noopener noreferrer">Start a loan application ↗</a></div>
       </section>
     </main>
   );
 }
+import Link from "next/link";

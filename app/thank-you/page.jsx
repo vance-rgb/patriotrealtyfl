@@ -10,10 +10,11 @@ export default function ThankYouPage() {
         <p className="eyebrow">Message received</p>
         <h1>Thank you.</h1>
         <p>We have your request and will follow up as soon as possible.</p>
-        <a className="button primary" href="/">
+        <Link className="button primary" href="/">
           Back home
-        </a>
+        </Link>
       </section>
     </main>
   );
 }
+import Link from "next/link";

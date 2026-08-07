@@ -7,7 +7,7 @@ export const metadata = {
   description: "Start your Florida mortgage preapproval, understand the home-loan process, and prepare to shop with a clearer price range.",
   alternates: { canonical: "/get-approved" },
   openGraph: {
-    title: "Get Approved for a Home Loan | Patriot Realty FL",
+    title: "Get Approved for a Home Loan | Approved Patriot Realty",
     description: "Take the first financing step before beginning your Florida home search.",
     url: "/get-approved",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Get approved for a Florida home loan" }]
@@ -30,7 +30,7 @@ export default function GetApprovedPage() {
             <a className="button primary" href={applicationUrl} target="_blank" rel="noopener noreferrer">
               Start your loan application
             </a>
-            <a className="button secondary" href="/buy">See the buyer process</a>
+            <Link className="button secondary" href="/buy">See the buyer process</Link>
           </div>
         </div>
         <aside className="approval-card">
@@ -66,7 +66,7 @@ export default function GetApprovedPage() {
           </article>
           <article>
             <h2>Shop with a practical target</h2>
-            <p>Coordinate your financing plan with Patriot Realty FL so the property search and offer strategy match your approved range.</p>
+          <p>Coordinate your financing plan with Approved Patriot Realty so the property search and offer strategy match your approved range.</p>
           </article>
         </div>
       </section>
@@ -82,7 +82,7 @@ export default function GetApprovedPage() {
           </p>
         </div>
         <div className="hero-actions dark-actions">
-          <a className="button primary" href="/mortgage-calculator">Open the mortgage calculator</a>
+          <Link className="button primary" href="/mortgage-calculator">Open the mortgage calculator</Link>
           <a className="button outline" href="https://www.approvedfl.com/calculator" target="_blank" rel="noopener noreferrer">Launch payment planner</a>
         </div>
       </section>
@@ -120,3 +120,4 @@ export default function GetApprovedPage() {
     </main>
   );
 }
+import Link from "next/link";

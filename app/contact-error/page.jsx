@@ -15,8 +15,9 @@ export default function ContactErrorPage() {
           Email <a href={`mailto:${site.email}`}>{site.email}</a> or call{" "}
           <a href={`tel:${site.phone.replace(/[^0-9]/g, "")}`}>{site.phone}</a>.
         </p>
-        <a className="button primary" href="/#contact">Return to the contact form</a>
+        <Link className="button primary" href="/#contact">Return to the contact form</Link>
       </section>
     </main>
   );
 }
+import Link from "next/link";

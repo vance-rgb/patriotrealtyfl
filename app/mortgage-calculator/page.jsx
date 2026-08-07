@@ -6,7 +6,7 @@ export const metadata = {
   description: "Start with a property address and explore estimated VA, FHA, and conventional monthly mortgage payment scenarios.",
   alternates: { canonical: "/mortgage-calculator" },
   openGraph: {
-    title: "Advanced Mortgage Payment Calculator | Patriot Realty FL",
+    title: "Advanced Mortgage Payment Calculator | Approved Patriot Realty",
     description: "Load available property and listing-price details, then explore estimated home payment scenarios.",
     url: "/mortgage-calculator",
     images: [{ url: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`, width: 1280, height: 720, alt: "Advanced mortgage calculator tutorial" }]
@@ -33,7 +33,7 @@ export default function MortgageCalculatorPage() {
           <p>Enter a property address, load available property and listing-price details, and explore estimated VA, FHA, or conventional monthly payment scenarios.</p>
           <div className="hero-actions">
             <a className="button primary" href={calculatorUrl} target="_blank" rel="noopener noreferrer">Open the payment planner</a>
-            <a className="button secondary" href="/va-home-loan-authority-youtube">Watch the calculator tutorial</a>
+            <Link className="button secondary" href="/va-home-loan-authority-youtube">Watch the calculator tutorial</Link>
           </div>
         </div>
         <div className="authority-video">
@@ -70,3 +70,4 @@ export default function MortgageCalculatorPage() {
     </main>
   );
 }
+import Link from "next/link";

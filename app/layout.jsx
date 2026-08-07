@@ -1,12 +1,13 @@
 import "./styles.css";
 import Script from "next/script";
+import Link from "next/link";
 import { site } from "../lib/site-data";
 
 export const metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Florida Real Estate for Buyers & Sellers | Patriot Realty FL",
-    template: "%s | Patriot Realty FL"
+    default: "Florida Real Estate for Buyers & Sellers | Approved Patriot Realty",
+    template: "%s | Approved Patriot Realty"
   },
   description: site.tagline,
   applicationName: site.name,
@@ -16,13 +17,13 @@ export const metadata = {
     locale: "en_US",
     url: "/",
     siteName: site.name,
-    title: "Florida Real Estate for Buyers & Sellers | Patriot Realty FL",
+    title: "Florida Real Estate for Buyers & Sellers | Approved Patriot Realty",
     description: site.tagline,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Patriot Realty FL" }]
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Approved Patriot Realty" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Florida Real Estate for Buyers & Sellers | Patriot Realty FL",
+    title: "Florida Real Estate for Buyers & Sellers | Approved Patriot Realty",
     description: site.tagline,
     images: ["/opengraph-image"]
   }
@@ -49,18 +50,18 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
         />
         <header className="site-header">
-          <a className="brand" href="/" aria-label="Patriot Realty FL home">
+          <Link className="brand" href="/" aria-label="Approved Patriot Realty home">
             <span className="brand-mark">PR</span>
             <span>
               <strong>{site.name}</strong>
               <small>{site.domain}</small>
             </span>
-          </a>
+          </Link>
           <nav aria-label="Main navigation">
             {site.nav.map((item) => (
-              <a key={item.href} href={item.href}>
+              <Link key={item.href} href={item.href}>
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
         </header>

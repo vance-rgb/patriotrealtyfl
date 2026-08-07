@@ -1,4 +1,5 @@
 import { site } from "../../lib/site-data";
+import Link from "next/link";
 
 const videoId = "JJVJZCoocmE";
 const cathyEmail = "cathy.rememberingvets@gmail.com";
@@ -9,7 +10,7 @@ export const metadata = {
   description: "Meet Cathy Heighter, a Gold Star mother, motivational speaker, and experienced Florida real estate professional with deep VA home-buying knowledge.",
   alternates: { canonical: "/cathy-heighter" },
   openGraph: {
-    title: "Meet Cathy Heighter | Patriot Realty FL",
+    title: "Meet Cathy Heighter | Approved Patriot Realty",
   description: "Gold Star mother, motivational speaker, Veteran advocate, and experienced Florida real estate professional with deep VA home-buying knowledge.",
     url: "/cathy-heighter",
     type: "profile",
@@ -49,7 +50,7 @@ export default function CathyHeighterPage() {
 
       <section className="agent-hero">
         <div>
-          <p className="eyebrow">Patriot Realty FL</p>
+          <p className="eyebrow">Approved Patriot Realty</p>
           <h1>Meet Cathy Heighter.</h1>
           <p>
             Cathy is a Gold Star mother, motivational speaker, Veteran advocate,
@@ -61,7 +62,7 @@ export default function CathyHeighterPage() {
             <a className="button primary" href={`mailto:${cathyEmail}?subject=I%20would%20like%20to%20work%20with%20Cathy%20Heighter`}>
               Work with Cathy
             </a>
-            <a className="button secondary" href="/buy">Explore the buyer process</a>
+            <Link className="button secondary" href="/buy">Explore the buyer process</Link>
           </div>
         </div>
 
@@ -103,7 +104,7 @@ export default function CathyHeighterPage() {
           </p>
           <div className="text-links">
             <a href={`mailto:${cathyEmail}?subject=I%20need%20a%20VA-experienced%20Realtor`}>Work with Cathy on a VA home purchase →</a>
-            <a href="/va-home-buying-florida">Explore the Florida VA buyer process →</a>
+            <Link href="/va-home-buying-florida">Explore the Florida VA buyer process →</Link>
           </div>
         </div>
         <div className="feature-video-wrap">
@@ -124,14 +125,14 @@ export default function CathyHeighterPage() {
           <p>
             Whether you are using a VA-backed loan, buying, selling, or
             relocating, Cathy combines real estate experience with an unusually
-            personal understanding of military families. She and Patriot Realty
+            personal understanding of military families. She and Approved Patriot Realty
             FL can help you approach the next step with a practical plan and
             steady communication.
           </p>
         </div>
         <div className="card">
           <h3>Connect with Cathy</h3>
-          <p>Contact Patriot Realty FL and let us know you would like to work with Cathy Heighter.</p>
+          <p>Contact Approved Patriot Realty and let us know you would like to work with Cathy Heighter.</p>
           <div className="text-links">
             <a href={`mailto:${cathyEmail}?subject=I%20would%20like%20to%20work%20with%20Cathy%20Heighter`}>{cathyEmail} →</a>
             <a href={`tel:${cathyPhone.replace(/[^0-9]/g, "")}`}>{cathyPhone} →</a>

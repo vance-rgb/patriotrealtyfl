@@ -1,4 +1,5 @@
 import { areas, services, site } from "../lib/site-data";
+import Link from "next/link";
 
 export const metadata = {
   alternates: { canonical: "/" }
@@ -16,15 +17,15 @@ export default function HomePage() {
             <a className="button primary" href="#contact">
               Request a consult
             </a>
-            <a className="button secondary" href="/areas">
+            <Link className="button secondary" href="/areas">
               Explore areas
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hero-video">
           <iframe
             src="https://app.heygen.com/embeds/638095ae152740c094e97245f2ac9c7a"
-            title="Patriot Realty FL introduction"
+            title="Approved Patriot Realty introduction"
             allow="encrypted-media; fullscreen"
             allowFullScreen
             loading="eager"
@@ -68,15 +69,15 @@ export default function HomePage() {
           <p className="eyebrow">A coordinated transaction</p>
           <h2>Real estate, financing, and closing support.</h2>
           <p>
-            Patriot Realty FL can help with the property search and negotiation.
+            Approved Patriot Realty can help with the property search and negotiation.
             When you need separately licensed mortgage or title services, learn
             about our affiliated companies and choose the providers that fit you.
           </p>
         </div>
         <div className="hero-actions dark-actions">
-          <a className="button primary" href="/get-approved">Get approved for a home loan</a>
-          <a className="button primary" href="/va-home-buying-florida">Florida VA buyers</a>
-          <a className="button outline" href="/trusted-partners">Meet our partners</a>
+          <Link className="button primary" href="/get-approved">Get approved for a home loan</Link>
+          <Link className="button primary" href="/va-home-buying-florida">Florida VA buyers</Link>
+          <Link className="button outline" href="/trusted-partners">Meet our partners</Link>
         </div>
       </section>
 

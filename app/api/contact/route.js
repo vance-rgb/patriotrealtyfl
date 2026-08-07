@@ -58,10 +58,10 @@ export async function POST(request) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      from: process.env.RESEND_FROM_EMAIL || "Patriot Realty FL <website@patriotrealtyfl.com>",
+      from: process.env.RESEND_FROM_EMAIL || "Approved Patriot Realty <website@patriotrealtyfl.com>",
       to: [site.email],
       reply_to: email,
-      subject: `New Patriot Realty lead: ${interest}`,
+      subject: `New Approved Patriot Realty lead: ${interest}`,
       html: `
         <h1>New website request</h1>
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
