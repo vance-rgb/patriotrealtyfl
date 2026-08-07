@@ -241,6 +241,12 @@ button {
   border-radius: 10px;
 }
 
+.rate-widget-shell iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
 .rate-disclaimer {
   margin-top: 16px;
   color: var(--muted);

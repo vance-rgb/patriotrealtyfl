@@ -80,7 +80,16 @@ export default function GetApprovedPage() {
             commitment to lend, or guarantee of available terms.
           </p>
         </div>
-        <div className="rate-widget-shell" id="mortgage-market-widget" aria-label="Optimal Blue mortgage market indices" />
+        <div className="rate-widget-shell" id="mortgage-market-widget">
+          <iframe
+            src="https://www2.optimalblue.com/OBMMI/widgetConfig.php?actbg=10233f&inactbg=2464a8&hoverBG=b73535&rate=2464a8&footer=10233f"
+            title="Optimal Blue mortgage market indices"
+            width="100%"
+            height="462"
+            frameBorder="0"
+            loading="lazy"
+          />
+        </div>
       </section>
 
       <section className="cta-strip">
