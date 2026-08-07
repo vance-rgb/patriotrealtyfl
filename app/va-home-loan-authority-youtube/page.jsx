@@ -7,7 +7,7 @@ export const metadata = {
   alternates: { canonical: "/va-home-loan-authority-youtube" },
   openGraph: {
     title: "VA Home Loan Authority on YouTube | Patriot Realty FL",
-    description: "Practical VA mortgage education for veterans and military families.",
+    description: "Practical VA mortgage education for Veterans and military families.",
     url: "/va-home-loan-authority-youtube",
     images: [{ url: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`, width: 1280, height: 720, alt: "VA Home Loan Authority video" }]
   }

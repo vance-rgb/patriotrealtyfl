@@ -1,6 +1,6 @@
 export const metadata = {
   title: "VA Home Loan Authority — The Patriot Advantage",
-  description: "A Florida VA home-buying guide connecting veterans with VA-experienced real estate, mortgage, and title professionals.",
+  description: "A Florida VA home-buying guide connecting Veterans with VA-experienced real estate, mortgage, and title professionals.",
   alternates: { canonical: "/va-home-loan-authority" },
   openGraph: {
     title: "The Patriot Advantage VA Home-Buying Guide | Patriot Realty FL",
@@ -44,7 +44,7 @@ export default function VaHomeLoanAuthorityPage() {
         <div className="hero-actions dark-actions"><a className="button primary" href="/mortgage-calculator">Open the mortgage calculator</a><a className="button outline" href="/va-home-loan-authority-youtube">Visit the YouTube learning center</a></div>
       </section>
       <section className="cta-strip">
-        <div><p className="eyebrow">Your veteran-focused team</p><h2>Start your Florida VA home-buying plan.</h2></div>
+        <div><p className="eyebrow">Your Veteran-focused team</p><h2>Start your Florida VA home-buying plan.</h2></div>
         <a className="button primary" href="mailto:vance@patriotrealtyfl.com?subject=VA%20home-buying%20help">Connect with Patriot Realty FL</a>
       </section>
     </main>

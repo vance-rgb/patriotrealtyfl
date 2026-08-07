@@ -10,7 +10,7 @@ export const metadata = {
   alternates: { canonical: "/cathy-heighter" },
   openGraph: {
     title: "Meet Cathy Heighter | Patriot Realty FL",
-    description: "Gold Star mother, motivational speaker, veteran advocate, and experienced Florida real estate professional with deep VA home-buying knowledge.",
+  description: "Gold Star mother, motivational speaker, Veteran advocate, and experienced Florida real estate professional with deep VA home-buying knowledge.",
     url: "/cathy-heighter",
     type: "profile",
     images: [{ url: `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`, width: 1280, height: 720, alt: "Cathy Heighter at TEDxLake Mary" }]
@@ -52,9 +52,9 @@ export default function CathyHeighterPage() {
           <p className="eyebrow">Patriot Realty FL</p>
           <h1>Meet Cathy Heighter.</h1>
           <p>
-            Cathy is a Gold Star mother, motivational speaker, veteran advocate,
+            Cathy is a Gold Star mother, motivational speaker, Veteran advocate,
             and experienced Florida real estate professional. Her deep knowledge
-            of VA home buying helps veterans and military families approach a
+            of VA home buying helps Veterans and military families approach a
             major move with informed, compassionate guidance.
           </p>
           <div className="hero-actions">
@@ -96,7 +96,7 @@ export default function CathyHeighterPage() {
           <p className="eyebrow">VA home-buying expertise</p>
           <h2>Veterans deserve a Realtor who understands the VA process.</h2>
           <p>
-            Cathy combines real estate experience, veteran advocacy, and a
+            Cathy combines real estate experience, Veteran advocacy, and a
             personal understanding of military families. She helps VA buyers
             evaluate homes, prepare offers, anticipate property and appraisal
             considerations, and coordinate closely with the lending and title teams.
@@ -109,7 +109,7 @@ export default function CathyHeighterPage() {
         <div className="feature-video-wrap">
           <iframe
             src="https://app.heygen.com/embeds/a9c22cb2bb464b958bbcfc9aa03f60f7"
-            title="Why veterans should work with a VA-experienced Realtor"
+            title="Why Veterans should work with a VA-experienced Realtor"
             allow="encrypted-media; fullscreen"
             allowFullScreen
             loading="lazy"
@@ -120,7 +120,7 @@ export default function CathyHeighterPage() {
       <section className="section split">
         <div>
           <p className="eyebrow">VA-aware real estate guidance</p>
-          <h2>Specialized support for veterans and Florida homebuyers.</h2>
+          <h2>Specialized support for Veterans and Florida homebuyers.</h2>
           <p>
             Whether you are using a VA-backed loan, buying, selling, or
             relocating, Cathy combines real estate experience with an unusually
