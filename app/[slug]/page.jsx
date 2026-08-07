@@ -48,6 +48,29 @@ export default async function DynamicPage({ params }) {
         <p>{page.intro}</p>
       </section>
 
+      {page.videoEmbed ? (
+        <section className="section video-section" aria-label="Seller video">
+          <div className="video-copy">
+            <p className="eyebrow">A message for Florida sellers</p>
+            <h2>Thinking about selling your home?</h2>
+            <p>Watch this quick introduction, then reach out when you are ready to discuss pricing, preparation, and timing.</p>
+          </div>
+          <div className="facebook-video-wrap">
+            <iframe
+              src={page.videoEmbed.src}
+              title={page.videoEmbed.title}
+              width="476"
+              height="476"
+              scrolling="no"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+        </section>
+      ) : null}
+
       <section className="section">
         <div className="detail-list">
           {page.sections.map((section) => (
