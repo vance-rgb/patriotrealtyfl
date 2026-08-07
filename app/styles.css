@@ -156,6 +156,15 @@ button {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+.outline {
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.dark-actions {
+  margin-top: 0;
+}
+
 .market-panel {
   display: grid;
   gap: 12px;
@@ -224,6 +233,28 @@ button {
 .card p,
 .detail-list p,
 .split p {
+  color: var(--muted);
+}
+
+.text-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin-top: 16px;
+}
+
+.text-links a {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.text-links a:hover {
+  text-decoration: underline;
+}
+
+.disclosure {
+  display: block;
+  margin-top: 14px;
   color: var(--muted);
 }
 

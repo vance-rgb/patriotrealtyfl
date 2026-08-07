@@ -14,8 +14,21 @@ export async function generateMetadata({ params }) {
   }
 
   return {
-    title: page.title,
-    description: page.intro
+    title: page.metaTitle || page.title,
+    description: page.intro,
+    alternates: { canonical: `/${slug}` },
+    openGraph: {
+      title: `${page.metaTitle || page.title} | Patriot Realty FL`,
+      description: page.intro,
+      url: `/${slug}`,
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: page.title }]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${page.metaTitle || page.title} | Patriot Realty FL`,
+      description: page.intro,
+      images: ["/opengraph-image"]
+    }
   };
 }
 
@@ -39,8 +52,24 @@ export default async function DynamicPage({ params }) {
         <div className="detail-list">
           {page.sections.map((section) => (
             <article key={section.heading}>
+              {section.kicker ? <p className="eyebrow">{section.kicker}</p> : null}
               <h2>{section.heading}</h2>
               <p>{section.body}</p>
+              {section.links?.length ? (
+                <div className="text-links">
+                  {section.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                    >
+                      {link.label} →
+                    </a>
+                  ))}
+                </div>
+              ) : null}
+              {section.note ? <small className="disclosure">{section.note}</small> : null}
             </article>
           ))}
         </div>

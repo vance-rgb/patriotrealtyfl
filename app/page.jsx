@@ -1,5 +1,9 @@
 import { areas, services, site, stats } from "../lib/site-data";
 
+export const metadata = {
+  alternates: { canonical: "/" }
+};
+
 export default function HomePage() {
   return (
     <main>
@@ -45,16 +49,32 @@ export default function HomePage() {
       <section className="section split">
         <div>
           <p className="eyebrow">Featured areas</p>
-          <h2>Built for quick local expansion.</h2>
+          <h2>Compare Florida markets before narrowing your search.</h2>
           <p>
-            Add city-specific content as your market focus grows. Each area can
-            become its own page without redesigning the whole site.
+            Start with lifestyle, travel, ownership costs, property types, and
+            the pace of each market—not just a list of homes.
           </p>
         </div>
         <div className="area-list">
           {areas.map((area) => (
             <span key={area}>{area}</span>
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">A coordinated transaction</p>
+          <h2>Real estate, financing, and closing support.</h2>
+          <p>
+            Patriot Realty FL can help with the property search and negotiation.
+            When you need separately licensed mortgage or title services, learn
+            about our affiliated companies and choose the providers that fit you.
+          </p>
+        </div>
+        <div className="hero-actions dark-actions">
+          <a className="button primary" href="/va-home-buying-florida">Florida VA buyers</a>
+          <a className="button outline" href="/trusted-partners">Meet our partners</a>
         </div>
       </section>
 

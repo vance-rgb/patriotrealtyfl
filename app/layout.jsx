@@ -2,17 +2,50 @@ import "./styles.css";
 import { site } from "../lib/site-data";
 
 export const metadata = {
+  metadataBase: new URL(site.url),
   title: {
-    default: "Patriot Realty FL",
+    default: "Florida Real Estate for Buyers & Sellers | Patriot Realty FL",
     template: "%s | Patriot Realty FL"
   },
-  description: site.tagline
+  description: site.tagline,
+  applicationName: site.name,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: site.name,
+    title: "Florida Real Estate for Buyers & Sellers | Patriot Realty FL",
+    description: site.tagline,
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Patriot Realty FL" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Florida Real Estate for Buyers & Sellers | Patriot Realty FL",
+    description: site.tagline,
+    images: ["/opengraph-image"]
+  }
 };
 
 export default function RootLayout({ children }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    name: site.name,
+    url: site.url,
+    email: site.email,
+    telephone: site.phone,
+    areaServed: { "@type": "State", name: "Florida" },
+    description: site.tagline
+  };
+
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+        />
         <header className="site-header">
           <a className="brand" href="/" aria-label="Patriot Realty FL home">
             <span className="brand-mark">PR</span>
@@ -37,7 +70,7 @@ export default function RootLayout({ children }) {
           </div>
           <div className="footer-contact">
             <a href={`mailto:${site.email}`}>{site.email}</a>
-            <a href={`tel:${site.phone.replace(/[^0-9]/g, "")}`}>{site.phone}</a>
+            {site.phone ? <a href={`tel:${site.phone.replace(/[^0-9]/g, "")}`}>{site.phone}</a> : null}
           </div>
         </footer>
       </body>
