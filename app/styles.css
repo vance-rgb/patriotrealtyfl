@@ -169,6 +169,84 @@ button {
   margin-top: 0;
 }
 
+.approval-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 40px;
+  align-items: center;
+  padding: clamp(64px, 9vw, 112px) clamp(18px, 5vw, 72px);
+  color: var(--white);
+  background: linear-gradient(135deg, var(--navy), #1c4f82 72%, var(--red));
+}
+
+.approval-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(42px, 7vw, 80px);
+  line-height: 0.98;
+}
+
+.approval-hero p:not(.eyebrow) {
+  max-width: 680px;
+  font-size: 20px;
+}
+
+.approval-card {
+  padding: 30px;
+  color: var(--ink);
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.22);
+}
+
+.approval-card h2 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+.approval-card .button {
+  width: 100%;
+}
+
+.approval-steps {
+  counter-reset: approval-step;
+}
+
+.approval-steps article {
+  position: relative;
+  padding-left: 76px;
+}
+
+.approval-steps article::before {
+  counter-increment: approval-step;
+  content: counter(approval-step);
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  color: var(--white);
+  background: var(--red);
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.rate-widget-shell {
+  min-height: 340px;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.rate-disclaimer {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .section {
   padding-block: 76px;
 }
@@ -332,6 +410,7 @@ textarea {
   .site-header,
   .site-footer,
   .hero,
+  .approval-hero,
   .split,
   .contact-band,
   .cta-strip {

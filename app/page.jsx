@@ -65,6 +65,7 @@ export default function HomePage() {
           </p>
         </div>
         <div className="hero-actions dark-actions">
+          <a className="button primary" href="/get-approved">Get approved for a home loan</a>
           <a className="button primary" href="/va-home-buying-florida">Florida VA buyers</a>
           <a className="button outline" href="/trusted-partners">Meet our partners</a>
         </div>
