@@ -65,19 +65,9 @@ export default function CathyHeighterPage() {
           </div>
         </div>
 
-        <div className="agent-video">
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0`}
-            title="Choosing Service Over Grief Leads to Unexpected Leadership and Legacy — Cathy Heighter at TEDxLake Mary"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            loading="lazy"
-          />
-        </div>
       </section>
 
-      <section className="section">
+      <section className="section gold-star-feature">
         <div className="agent-intro">
           <p className="eyebrow">Gold Star mother and motivational speaker</p>
           <h2>A personal story of resilience, advocacy, leadership, and legacy.</h2>
@@ -88,6 +78,16 @@ export default function CathyHeighterPage() {
             speaker reflects the empathy, perseverance, and sense of
             responsibility she brings to the people she serves.
           </p>
+        </div>
+        <div className="agent-video">
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0`}
+            title="Choosing Service Over Grief Leads to Unexpected Leadership and Legacy — Cathy Heighter at TEDxLake Mary"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            loading="lazy"
+          />
         </div>
       </section>
 
