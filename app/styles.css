@@ -336,6 +336,125 @@ button {
   font-size: 18px;
 }
 
+.recruit-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 48px;
+  align-items: center;
+  padding: clamp(64px, 9vw, 118px) clamp(18px, 5vw, 72px);
+  color: var(--white);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(183, 53, 53, 0.68), transparent 32%),
+    linear-gradient(135deg, #0b1b32, var(--navy) 58%, #1c4f82);
+}
+
+.recruit-hero h1 {
+  max-width: 820px;
+  margin: 0;
+  font-size: clamp(50px, 8vw, 96px);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+}
+
+.recruit-hero p:not(.eyebrow) {
+  max-width: 700px;
+  font-size: 20px;
+}
+
+.commission-card {
+  padding: 34px;
+  color: var(--ink);
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.commission-number {
+  display: block;
+  color: var(--red);
+  font-size: clamp(58px, 9vw, 96px);
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+}
+
+.commission-label {
+  display: block;
+  margin: 10px 0 24px;
+  color: var(--navy);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.fee-line {
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.fee-line strong {
+  color: var(--navy);
+  font-size: 28px;
+}
+
+.recruit-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.recruit-benefits article {
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--red);
+  border-radius: 8px;
+}
+
+.recruit-benefits h3 {
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: 25px;
+}
+
+.recruit-benefits p,
+.recruit-fit p {
+  color: var(--muted);
+}
+
+.recruit-fit {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 1.1fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.recruit-checklist {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recruit-checklist li {
+  padding: 16px 18px 16px 48px;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font-weight: 700;
+  position: relative;
+}
+
+.recruit-checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 18px;
+  color: var(--red);
+  font-weight: 900;
+}
+
 .section {
   padding-block: 76px;
 }
@@ -502,6 +621,8 @@ textarea {
   .approval-hero,
   .video-section,
   .agent-hero,
+  .recruit-hero,
+  .recruit-fit,
   .split,
   .contact-band,
   .cta-strip {
@@ -519,6 +640,10 @@ textarea {
   }
 
   .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recruit-benefits {
     grid-template-columns: 1fr;
   }
 
