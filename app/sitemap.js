@@ -7,6 +7,8 @@ export default function sitemap() {
     { url: site.url, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${site.url}/get-approved`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${site.url}/va-home-loan-authority`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${site.url}/mortgage-calculator`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${site.url}/va-home-loan-authority-youtube`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/cathy-heighter`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}/join-our-team`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     ...getPageSlugs().map((slug) => ({

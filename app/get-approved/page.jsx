@@ -82,7 +82,7 @@ export default function GetApprovedPage() {
           </p>
         </div>
         <div className="hero-actions dark-actions">
-          <a className="button primary" href="/va-home-loan-authority">Open the VA Home Loan Authority</a>
+          <a className="button primary" href="/mortgage-calculator">Open the mortgage calculator</a>
           <a className="button outline" href="https://www.approvedfl.com/calculator" target="_blank" rel="noopener noreferrer">Launch payment planner</a>
         </div>
       </section>
