@@ -71,6 +71,25 @@ export default async function DynamicPage({ params }) {
         </section>
       ) : null}
 
+      {page.featuredVideo ? (
+        <section className="section featured-video-section">
+          <div className="video-copy">
+            <p className="eyebrow">{page.featuredVideo.eyebrow}</p>
+            <h2>{page.featuredVideo.heading}</h2>
+            <p>{page.featuredVideo.body}</p>
+          </div>
+          <div className="feature-video-wrap">
+            <iframe
+              src={page.featuredVideo.src}
+              title={page.featuredVideo.title}
+              allow="encrypted-media; fullscreen"
+              allowFullScreen
+              loading="lazy"
+            />
+          </div>
+        </section>
+      ) : null}
+
       <section className="section">
         <div className="detail-list">
           {page.sections.map((section) => (
