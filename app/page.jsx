@@ -86,19 +86,42 @@ export default function HomePage() {
           <h2>Tell us what kind of move you are planning.</h2>
         </div>
         <form action="/api/contact" method="post">
+          <input
+            className="website-field"
+            name="website"
+            tabIndex="-1"
+            autoComplete="off"
+            aria-hidden="true"
+          />
           <label>
             Name
-            <input name="name" placeholder="Your name" required />
+            <input name="name" placeholder="Your name" maxLength="100" autoComplete="name" required />
           </label>
           <label>
             Email
-            <input name="email" type="email" placeholder="you@example.com" required />
+            <input name="email" type="email" placeholder="you@example.com" maxLength="254" autoComplete="email" required />
+          </label>
+          <label>
+            Phone <span className="optional">(optional)</span>
+            <input name="phone" type="tel" placeholder="386-555-0123" maxLength="30" autoComplete="tel" />
+          </label>
+          <label>
+            I am interested in
+            <select name="interest" defaultValue="">
+              <option value="" disabled>Select one</option>
+              <option value="Buying a home">Buying a home</option>
+              <option value="Selling a home">Selling a home</option>
+              <option value="Relocating to Florida">Relocating to Florida</option>
+              <option value="VA home buying">VA home buying</option>
+              <option value="General question">General question</option>
+            </select>
           </label>
           <label>
             What can we help with?
-            <textarea name="message" placeholder="Buying, selling, relocating, or comparing areas?" required />
+            <textarea name="message" placeholder="Tell us about your plans and timeline." maxLength="3000" required />
           </label>
           <button type="submit">Send request</button>
+          <p className="form-note">Your information is used only to respond to this request.</p>
         </form>
       </section>
     </main>

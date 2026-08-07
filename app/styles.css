@@ -693,13 +693,34 @@ label {
 }
 
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   padding: 13px 14px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 6px;
   color: var(--ink);
   font: inherit;
+}
+
+.website-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.optional,
+.form-note {
+  color: #c8d5e4;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.form-note {
+  margin: 0;
 }
 
 textarea {
