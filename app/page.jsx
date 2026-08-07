@@ -1,4 +1,4 @@
-import { areas, services, site, stats } from "../lib/site-data";
+import { areas, services, site } from "../lib/site-data";
 
 export const metadata = {
   alternates: { canonical: "/" }
@@ -7,7 +7,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main>
-      <section className="hero">
+      <section className="hero hero-single">
         <div className="hero-copy">
           <p className="eyebrow">Florida residential real estate</p>
           <h1>{site.name}</h1>
@@ -20,14 +20,6 @@ export default function HomePage() {
               Explore areas
             </a>
           </div>
-        </div>
-        <div className="market-panel" aria-label="Market highlights">
-          {stats.map((stat) => (
-            <div key={stat.label}>
-              <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </div>
-          ))}
         </div>
       </section>
 
