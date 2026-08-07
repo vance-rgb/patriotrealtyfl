@@ -73,6 +73,22 @@ export default function GetApprovedPage() {
 
       <section className="section split">
         <div>
+          <p className="eyebrow">Property-specific planning</p>
+          <h2>Estimate a payment for a home you found.</h2>
+          <p>
+            Use the Approved Mortgage Payment Planner to enter an address,
+            load available listing details, compare loan scenarios, and review
+            an estimated monthly housing payment.
+          </p>
+        </div>
+        <div className="hero-actions dark-actions">
+          <a className="button primary" href="/va-home-loan-authority">Open the VA Home Loan Authority</a>
+          <a className="button outline" href="https://www.approvedfl.com/calculator" target="_blank" rel="noopener noreferrer">Launch payment planner</a>
+        </div>
+      </section>
+
+      <section className="section split">
+        <div>
           <p className="eyebrow">Mortgage market snapshot</p>
           <h2>See current national mortgage-rate indices.</h2>
           <p>
