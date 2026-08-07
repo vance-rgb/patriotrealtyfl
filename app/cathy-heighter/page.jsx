@@ -91,6 +91,32 @@ export default function CathyHeighterPage() {
         </div>
       </section>
 
+      <section className="section featured-video-section">
+        <div className="video-copy">
+          <p className="eyebrow">VA home-buying expertise</p>
+          <h2>Veterans deserve a Realtor who understands the VA process.</h2>
+          <p>
+            Cathy combines real estate experience, veteran advocacy, and a
+            personal understanding of military families. She helps VA buyers
+            evaluate homes, prepare offers, anticipate property and appraisal
+            considerations, and coordinate closely with the lending and title teams.
+          </p>
+          <div className="text-links">
+            <a href={`mailto:${cathyEmail}?subject=I%20need%20a%20VA-experienced%20Realtor`}>Work with Cathy on a VA home purchase →</a>
+            <a href="/va-home-buying-florida">Explore the Florida VA buyer process →</a>
+          </div>
+        </div>
+        <div className="feature-video-wrap">
+          <iframe
+            src="https://app.heygen.com/embeds/a9c22cb2bb464b958bbcfc9aa03f60f7"
+            title="Why veterans should work with a VA-experienced Realtor"
+            allow="encrypted-media; fullscreen"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      </section>
+
       <section className="section split">
         <div>
           <p className="eyebrow">VA-aware real estate guidance</p>
