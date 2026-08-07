@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ContactErrorPage() {
   return (
-    <main>
+    <main id="main-content" tabIndex="-1">
       <section className="page-hero">
         <p className="eyebrow">We could not send that request</p>
         <h1>Please try again or contact Vance directly.</h1>

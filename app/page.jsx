@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main>
+    <main id="main-content" tabIndex="-1">
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Florida residential real estate</p>

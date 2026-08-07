@@ -41,7 +41,7 @@ export default async function DynamicPage({ params }) {
   }
 
   return (
-    <main>
+    <main id="main-content" tabIndex="-1">
       <section className="page-hero">
         <p className="eyebrow">{page.eyebrow}</p>
         <h1>{page.title}</h1>

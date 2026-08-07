@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function ThankYouPage() {
   return (
-    <main>
+    <main id="main-content" tabIndex="-1">
       <section className="page-hero">
         <p className="eyebrow">Message received</p>
         <h1>Thank you.</h1>

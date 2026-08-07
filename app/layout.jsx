@@ -1,4 +1,5 @@
 import "./styles.css";
+import Script from "next/script";
 import { site } from "../lib/site-data";
 
 export const metadata = {
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <a className="skip-link" href="#main-content">Skip to main content</a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
@@ -63,6 +65,13 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
         {children}
+        <Script
+          src="https://cdn.userway.org/widget.js"
+          data-account="4HuQjmnJ10"
+          data-position="5"
+          data-type="2"
+          strategy="afterInteractive"
+        />
         <footer className="site-footer">
           <div>
             <strong>{site.name}</strong>
