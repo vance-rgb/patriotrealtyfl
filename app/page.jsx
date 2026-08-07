@@ -7,7 +7,7 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main>
-      <section className="hero hero-single">
+      <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Florida residential real estate</p>
           <h1>{site.name}</h1>
@@ -20,6 +20,15 @@ export default function HomePage() {
               Explore areas
             </a>
           </div>
+        </div>
+        <div className="hero-video">
+          <iframe
+            src="https://app.heygen.com/embeds/638095ae152740c094e97245f2ac9c7a"
+            title="Patriot Realty FL introduction"
+            allow="encrypted-media; fullscreen"
+            allowFullScreen
+            loading="eager"
+          />
         </div>
       </section>
 
