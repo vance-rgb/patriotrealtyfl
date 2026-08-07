@@ -1,6 +1,8 @@
 import { site } from "../../lib/site-data";
 
 const videoId = "JJVJZCoocmE";
+const cathyEmail = "cathy.rememberingvets@gmail.com";
+const cathyPhone = "386-931-8323";
 
 export const metadata = {
   title: "Cathy Heighter | Florida Real Estate Professional",
@@ -21,6 +23,8 @@ export default function CathyHeighterPage() {
     "@type": "Person",
     name: "Cathy Heighter",
     jobTitle: "Licensed real estate professional",
+    email: cathyEmail,
+    telephone: cathyPhone,
     sameAs: ["https://www.facebook.com/CathyHeighter"],
     worksFor: {
       "@type": "RealEstateAgent",
@@ -53,7 +57,7 @@ export default function CathyHeighterPage() {
             helping people move forward.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href={`mailto:${site.email}?subject=I%20would%20like%20to%20work%20with%20Cathy%20Heighter`}>
+            <a className="button primary" href={`mailto:${cathyEmail}?subject=I%20would%20like%20to%20work%20with%20Cathy%20Heighter`}>
               Work with Cathy
             </a>
             <a className="button secondary" href="/buy">Explore the buyer process</a>
@@ -99,8 +103,8 @@ export default function CathyHeighterPage() {
           <h3>Connect with Cathy</h3>
           <p>Contact Patriot Realty FL and let us know you would like to work with Cathy Heighter.</p>
           <div className="text-links">
-            <a href={`mailto:${site.email}?subject=Connect%20me%20with%20Cathy%20Heighter`}>{site.email} →</a>
-            <a href={`tel:${site.phone.replace(/[^0-9]/g, "")}`}>{site.phone} →</a>
+            <a href={`mailto:${cathyEmail}?subject=I%20would%20like%20to%20work%20with%20Cathy%20Heighter`}>{cathyEmail} →</a>
+            <a href={`tel:${cathyPhone.replace(/[^0-9]/g, "")}`}>{cathyPhone} →</a>
             <a href="https://www.facebook.com/CathyHeighter" target="_blank" rel="noopener noreferrer">Cathy on Facebook →</a>
           </div>
         </div>
@@ -111,8 +115,8 @@ export default function CathyHeighterPage() {
           <p className="eyebrow">Ready when you are</p>
           <h2>Start a conversation with Cathy.</h2>
         </div>
-        <a className="button primary" href={`mailto:${site.email}?subject=I%20would%20like%20to%20work%20with%20Cathy%20Heighter`}>
-          Contact Patriot Realty FL
+        <a className="button primary" href={`mailto:${cathyEmail}?subject=I%20would%20like%20to%20work%20with%20Cathy%20Heighter`}>
+          Contact Cathy
         </a>
       </section>
     </main>
