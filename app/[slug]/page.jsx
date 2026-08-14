@@ -41,8 +41,26 @@ export default async function DynamicPage({ params }) {
     notFound();
   }
 
+  const faqSchema = page.faqs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: page.faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: { "@type": "Answer", text: faq.answer }
+        }))
+      }
+    : null;
+
   return (
     <main id="main-content" tabIndex="-1">
+      {faqSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
+        />
+      ) : null}
       <section className="page-hero">
         <p className="eyebrow">{page.eyebrow}</p>
         <h1>{page.title}</h1>
@@ -56,15 +74,12 @@ export default async function DynamicPage({ params }) {
             <h2>Thinking about selling your home?</h2>
             <p>Watch this quick introduction, then reach out when you are ready to discuss pricing, preparation, and timing.</p>
           </div>
-          <div className="facebook-video-wrap">
+          <div className={page.videoEmbed.provider === "youtube" ? "feature-video-wrap" : "facebook-video-wrap"}>
             <iframe
               src={page.videoEmbed.src}
               title={page.videoEmbed.title}
-              width="476"
-              height="476"
-              scrolling="no"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
               loading="lazy"
             />
@@ -117,6 +132,32 @@ export default async function DynamicPage({ params }) {
           ))}
         </div>
       </section>
+
+      {page.faqs?.length ? (
+        <section className="section" aria-labelledby={`${slug}-faq-heading`}>
+          <div className="section-heading">
+            <p className="eyebrow">Florida seller questions</p>
+            <h2 id={`${slug}-faq-heading`}>Frequently asked questions</h2>
+          </div>
+          <div className="detail-list">
+            {page.faqs.map((faq) => (
+              <article key={faq.question}>
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {page.notice ? (
+        <section className="section" aria-label="Information and fair housing notice">
+          <div className="section-heading">
+            <p className="eyebrow">Information and fair housing notice</p>
+            <p>{page.notice}</p>
+          </div>
+        </section>
+      ) : null}
 
       <section className="cta-strip">
         <div>
