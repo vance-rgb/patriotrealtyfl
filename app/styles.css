@@ -707,6 +707,25 @@ form {
   gap: 14px;
 }
 
+.contact-fallback {
+  align-self: start;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 12px;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.contact-fallback h3 {
+  margin: 0 0 10px;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.contact-fallback p {
+  margin: 0;
+  color: #dbe6f2;
+}
+
 label {
   display: grid;
   gap: 6px;

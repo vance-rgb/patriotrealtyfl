@@ -6,6 +6,9 @@ export const metadata = {
 };
 
 export default function HomePage() {
+  const contactFormEnabled = Boolean(process.env.RESEND_API_KEY);
+  const directEmailHref = `mailto:${site.email}?subject=${encodeURIComponent("Florida real estate consultation")}`;
+
   return (
     <main id="main-content" tabIndex="-1">
       <section className="hero">
@@ -86,6 +89,7 @@ export default function HomePage() {
           <p className="eyebrow">Start a conversation</p>
           <h2>Tell us what kind of move you are planning.</h2>
         </div>
+        {contactFormEnabled ? (
         <form action="/api/contact" method="post">
           <input
             className="website-field"
@@ -124,6 +128,20 @@ export default function HomePage() {
           <button type="submit">Send request</button>
           <p className="form-note">Your information is used only to respond to this request.</p>
         </form>
+        ) : (
+          <div className="contact-fallback" role="group" aria-label="Direct contact options">
+            <h3>Contact Approved Patriot Realty directly.</h3>
+            <p>
+              Email or call to discuss your Florida property, expected timeline,
+              and the kind of help you need. Please do not send Social Security
+              numbers, banking information, or other sensitive documents by email.
+            </p>
+            <div className="hero-actions">
+              <a className="button primary" href={directEmailHref}>Email {site.email}</a>
+              <a className="button secondary" href={`tel:${site.phone.replace(/[^0-9]/g, "")}`}>Call {site.phone}</a>
+            </div>
+          </div>
+        )}
       </section>
     </main>
   );
