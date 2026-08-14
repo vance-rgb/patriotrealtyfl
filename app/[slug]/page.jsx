@@ -41,26 +41,45 @@ export default async function DynamicPage({ params }) {
     notFound();
   }
 
-  const faqSchema = page.faqs?.length
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: page.faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: { "@type": "Answer", text: faq.answer }
-        }))
-      }
-    : null;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${site.url}/${slug}#webpage`,
+        url: `${site.url}/${slug}`,
+        name: page.metaTitle || page.title,
+        description: page.intro,
+        isPartOf: { "@id": `${site.url}/#website` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+          { "@type": "ListItem", position: 2, name: page.title, item: `${site.url}/${slug}` }
+        ]
+      },
+      ...(page.faqs?.length
+        ? [
+            {
+              "@type": "FAQPage",
+              mainEntity: page.faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer }
+              }))
+            }
+          ]
+        : [])
+    ]
+  };
 
   return (
     <main id="main-content" tabIndex="-1">
-      {faqSchema ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }}
-        />
-      ) : null}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
       <section className="page-hero">
         <p className="eyebrow">{page.eyebrow}</p>
         <h1>{page.title}</h1>
@@ -162,10 +181,10 @@ export default async function DynamicPage({ params }) {
       <section className="cta-strip">
         <div>
           <p className="eyebrow">Ready when you are</p>
-          <h2>Make your next step clearer.</h2>
+          <h2>{page.cta?.heading || "Make your next step clearer."}</h2>
         </div>
-        <a className="button primary" href={`mailto:${site.email}`}>
-          Contact Approved Patriot Realty
+        <a className="button primary" href={page.cta?.href || `mailto:${site.email}`}>
+          {page.cta?.label || "Contact Approved Patriot Realty"}
         </a>
       </section>
     </main>
