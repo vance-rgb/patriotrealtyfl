@@ -73,6 +73,16 @@ export default function RootLayout({ children }) {
           data-type="2"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18389645626"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'AW-18389645626');`}
+        </Script>
         <footer className="site-footer">
           <div>
             <strong>{site.name}</strong>
