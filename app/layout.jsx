@@ -83,6 +83,17 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-18389645626');`}
         </Script>
+        <Script id="contact-click-tracking" strategy="afterInteractive">
+          {`document.addEventListener('click', function (event) {
+  var link = event.target instanceof Element ? event.target.closest('a[href^="tel:"],a[href^="mailto:"]') : null;
+  if (!link || typeof window.gtag !== 'function') return;
+  var href = link.getAttribute('href') || '';
+  window.gtag('event', 'contact_click', {
+    contact_method: href.indexOf('tel:') === 0 ? 'phone' : 'email',
+    page_path: window.location.pathname
+  });
+});`}
+        </Script>
         <footer className="site-footer">
           <div>
             <strong>{site.name}</strong>
