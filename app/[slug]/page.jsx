@@ -74,34 +74,79 @@ export default async function DynamicPage({ params }) {
     ]
   };
 
+  const heroHighlights = page.heroHighlights || [
+    "Florida market guidance",
+    "Clear transaction planning",
+    "Direct professional support"
+  ];
+
   return (
-    <main id="main-content" tabIndex="-1">
+    <main id="main-content" className={`landing-page landing-page-${slug}`} tabIndex="-1">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
-      <section className="page-hero">
-        <p className="eyebrow">{page.eyebrow}</p>
-        <h1>{page.title}</h1>
-        <p>{page.intro}</p>
+
+      <section className="landing-hero">
+        <div className="landing-hero-copy">
+          <p className="eyebrow">★ {page.eyebrow} · Florida statewide</p>
+          <h1>{page.title}</h1>
+          {page.heroAccent ? <p className="hero-accent">{page.heroAccent}</p> : null}
+          <p className="hero-intro">{page.intro}</p>
+          <div className="hero-highlight-list" aria-label="Service highlights">
+            {heroHighlights.map((item) => <span key={item}>{item}</span>)}
+          </div>
+          <div className="landing-hero-actions">
+            <a className="button primary" href={page.cta?.href || `mailto:${site.email}`}>
+              {page.cta?.label || "Contact Approved Patriot Realty"}
+            </a>
+            <a className="button light" href={`tel:${site.phone.replace(/[^0-9]/g, "")}`}>
+              Call {site.phone}
+            </a>
+          </div>
+        </div>
+
+        <div className="landing-hero-visual">
+          {page.videoEmbed ? (
+            <div className="landing-video-frame">
+              <div className="video-status"><span /> Featured video guide</div>
+              <iframe
+                src={page.videoEmbed.src}
+                title={page.videoEmbed.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          ) : (
+            <div className="landing-signal-card">
+              <p className="eyebrow">Approved Patriot Realty</p>
+              <h2>A clearer Florida real estate plan starts here.</h2>
+              <p>Use this guide to prepare your questions, compare options, and make the next conversation more productive.</p>
+              <div className="signal-lines" aria-hidden="true"><span /><span /><span /></div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="landing-trust-strip" aria-label="Approved Patriot Realty service standards">
+        <div><strong>Florida</strong><span>Statewide guidance</span></div>
+        <div><strong>Direct</strong><span>Professional support</span></div>
+        <div><strong>Clear</strong><span>Transaction planning</span></div>
+        <div><strong>Equal</strong><span>Professional service</span></div>
       </section>
 
       {page.videoEmbed ? (
-        <section className="section video-section" aria-label="Seller video">
+        <section className="section landing-video-summary" aria-label="Video guide summary">
           <div className="video-copy">
-            <p className="eyebrow">A message for Florida sellers</p>
-            <h2>Thinking about selling your home?</h2>
-            <p>Watch this quick introduction, then reach out when you are ready to discuss pricing, preparation, and timing.</p>
+            <p className="eyebrow">Watch, then plan</p>
+            <h2>{page.videoEmbed.title}</h2>
+            <p>The written guide below expands the video with practical checkpoints, related resources, and a clear next action.</p>
           </div>
-          <div className={page.videoEmbed.provider === "youtube" ? "feature-video-wrap" : "facebook-video-wrap"}>
-            <iframe
-              src={page.videoEmbed.src}
-              title={page.videoEmbed.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              loading="lazy"
-            />
+          <div className="video-summary-card">
+            <strong>Video + written guide</strong>
+            <span>One topic, coordinated across YouTube and the website.</span>
           </div>
         </section>
       ) : null}
@@ -125,7 +170,12 @@ export default async function DynamicPage({ params }) {
         </section>
       ) : null}
 
-      <section className="section">
+      <section className="section landing-content">
+        <div className="section-heading landing-section-heading">
+          <p className="eyebrow">Your step-by-step guide</p>
+          <h2>Make the Florida real estate process easier to understand.</h2>
+          <p>Start with the fundamentals, then use the related links and consultation option for your property, market, and timeline.</p>
+        </div>
         <div className="detail-list">
           {page.sections.map((section) => (
             <article key={section.heading}>
@@ -153,9 +203,9 @@ export default async function DynamicPage({ params }) {
       </section>
 
       {page.faqs?.length ? (
-        <section className="section" aria-labelledby={`${slug}-faq-heading`}>
+        <section className="section landing-faq" aria-labelledby={`${slug}-faq-heading`}>
           <div className="section-heading">
-            <p className="eyebrow">Florida seller questions</p>
+            <p className="eyebrow">Florida real estate questions</p>
             <h2 id={`${slug}-faq-heading`}>Frequently asked questions</h2>
           </div>
           <div className="detail-list">
@@ -170,7 +220,7 @@ export default async function DynamicPage({ params }) {
       ) : null}
 
       {page.notice ? (
-        <section className="section" aria-label="Information and fair housing notice">
+        <section className="section landing-notice" aria-label="Information and fair housing notice">
           <div className="section-heading">
             <p className="eyebrow">Information and fair housing notice</p>
             <p>{page.notice}</p>
