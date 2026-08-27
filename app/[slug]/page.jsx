@@ -228,6 +228,35 @@ export default async function DynamicPage({ params }) {
         </section>
       ) : null}
 
+      {slug === "sell" ? (
+        <section className="contact-band seller-contact" id="seller-contact" aria-labelledby="seller-contact-heading">
+          <div>
+            <p className="eyebrow">Seller consultation</p>
+            <h2 id="seller-contact-heading">Talk through your property and timing.</h2>
+            <p>
+              Share the basics of your sale—property location, preferred timing, and
+              the questions you want answered. We will respond directly. Please do
+              not email Social Security numbers, banking information, or other
+              sensitive documents.
+            </p>
+          </div>
+          <div className="contact-fallback" role="group" aria-label="Seller consultation contact options">
+            <div className="hero-actions">
+              <a
+                className="button primary"
+                href="mailto:vance@patriotrealtyfl.com?subject=Florida%20seller%20consultation"
+              >
+                Email a seller request
+              </a>
+              <a className="button secondary" href={`tel:${site.phone.replace(/[^0-9]/g, "")}`}>
+                Call {site.phone}
+              </a>
+            </div>
+            <p className="form-note">A consultation is informational; listing terms and fees are discussed separately.</p>
+          </div>
+        </section>
+      ) : null}
+
       <section className="cta-strip">
         <div>
           <p className="eyebrow">Ready when you are</p>
